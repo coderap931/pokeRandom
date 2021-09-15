@@ -1,0 +1,7 @@
+body {
+    display: block;
+    background-color: rgb(92, 32, 32);
+    color: rgb(226, 214, 214);
+    text-shadow: 5px 5px 5px black;
+    text-align: center;
+}
