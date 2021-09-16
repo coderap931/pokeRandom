@@ -47,6 +47,8 @@ function displayPokemon(json) {
 
 let random = document.getElementById('randomButton');
 random.addEventListener('click', function(){
+    let pokemon = document.getElementById('pokemon');
+    pokemon.style = 'width: 30%; border: 8px solid black;';
     let pokemonIs = document.getElementById('pokemonIs');
     pokemonIs.style = 'opacity: 100%;';
     let pokemonFacts = document.getElementById('pokemonFacts');

@@ -23,3 +23,18 @@ footer {
     width: 99%;
     bottom: 3%;
 }
+
+#randomButton {
+    margin-top: 10%;
+    padding: 10px 30px;
+    font-size: 20px;
+    box-shadow: 5px 5px 5px black;
+}
+
+#pokemon {
+    margin-top: 15%;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .1);
+    width: 0%;
+    border-radius: 10%;
+}
