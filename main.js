@@ -12,14 +12,9 @@ function displayPokemon(json) {
     pokemonName.innerText = `${name}`;
     pokemonSprite.src = json.sprites.front_default;
     let factList = document.getElementById('factList');
-    // document.getElementById('randomButton').addEventListener('click', function(){
-    //     if(factList != ''){
-    //         factlist = '';
-    //     }
-    // })
     let factID = document.createElement('li');
     let id = json.id;
-    factID.innerText = `Your Pokémon's ID is: ${id}`;
+    factID.innerText = `Your Pokémon's ID: ${id}`;
     factList.appendChild(factID);
 
     let typeLength = json.types.length;
@@ -35,19 +30,33 @@ function displayPokemon(json) {
             let newInner = `${inner}, ${upperType}`;
             inner = newInner;
         }
-        factTypes.innerText = 'Your Pokémon is of Type(s): ' + inner;
+        factTypes.innerText = `Your Pokémon is of Type(s): ${inner}`;
     }
     factList.appendChild(factTypes);
+
+    let factHeight = document.createElement('li');
+    let height = json.height;
+    factHeight.innerText = `Your Pokémon's Height(in decimeters): ${height}`;
+    factList.appendChild(factHeight);
+
+    let factWeight = document.createElement('li');
+    let weight = json.weight;
+    factWeight.innerText = `Your Pokémon's Weight(in hectograms): ${weight}`;
+    factList.appendChild(factWeight);
 }
 
 let random = document.getElementById('randomButton');
 random.addEventListener('click', function(){
+    let pokemonIs = document.getElementById('pokemonIs');
+    pokemonIs.style = 'opacity: 100%;';
+    let pokemonFacts = document.getElementById('pokemonFacts');
+    pokemonFacts.style = 'opacity: 100%';
     if(factList.innerText != ''){
         factList.innerText = '';
         let pokeID = Math.floor(Math.random() * 893) + 1; //893 for the number of pokemon in the API, +1 to make the id non-zero (There are actually 894 pokemon in the API, 893 is used due to the +1 to not result in an id of 895(which doesnt exist), id's start at 1 in the API)
         gottaFetchEmAll(pokeID);
     } else {
-        let pokeID = Math.floor(Math.random() * 893) + 1; //893 for the number of pokemon in the API, +1 to make the id non-zero (There are actually 894 pokemon in the API, 893 is used due to the +1 to not result in an id of 895(which doesnt exist), id's start at 1 in the API)
+        let pokeID = Math.floor(Math.random() * 893) + 1;
         gottaFetchEmAll(pokeID);
     }
 });

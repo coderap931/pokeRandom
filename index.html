@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="topBar">
-        <h1>WELCOME TO POKÉRANDOM</h1>
+        <h1>Welcome to PokéRandom</h1>
     </div>
 
     <div id="randomSearchWrapper">
@@ -17,14 +17,19 @@
     </div>
 
     <div id="pokemon">
-        <h2>Your Pokémon is:</h2>
+        <h2 id="pokemonIs">Your Pokémon is:</h2>
         <h3 id="pokemonName"></h3>
         <img id="pokemonSprite" src="">
-        <h2>Facts about your Pokémon:</h2>
+        <h2 id="pokemonFacts">Facts about your Pokémon:</h2>
         <ul id="factList">
             <!-- <li> elements and their contents are added dynamically -->
         </ul>
     </div>
+
+    <footer>
+        <p>Created by Adam Patrick (2021) using the API which can be found here: </p>
+        <a href="https://pokeapi.co/" target="blank">https://pokeapi.co/</a>
+    </footer>
 
     <script type="text/javascript" src="./main.js"></script>
 </body>
